@@ -1,4 +1,6 @@
 # UNet2D.jl
+This is a Julia wrapper for https://github.com/flavell-lab/unet2d
+
 ## Instrunctions
 ### Model creation and evaluation
 ```julia
