@@ -1,8 +1,8 @@
-function create_model(n_ch_input, n_class, n_feature_init,path_model=nothing; device=torch_device, eval_mode=true)
+function create_model(n_ch_input, n_class, n_feature_init, path_weights=nothing; device=torch_device, eval_mode=true)
     model = py_unet2d.model.unet_model.UNet2D(n_ch_input, n_class, n_feature_init, false)
     
     model.to(device)
-    !isnothing(path_model) && model.load_state_dict(torch.load(path_model, map_location=device))
+    !isnothing(path_model) && model.load_state_dict(torch.load(path_weights, map_location=device))
     eval_mode && model.eval()
     
     return model
