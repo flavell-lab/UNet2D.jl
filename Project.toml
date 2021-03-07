@@ -1,0 +1,4 @@
+name = "UNet2D"
+uuid = "a2011366-b6bb-40a8-9198-d2dcc5268e57"
+authors = ["urlicht <jungsu93@gmail.com>"]
+version = "0.1.0"
