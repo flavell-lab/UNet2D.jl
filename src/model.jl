@@ -14,7 +14,7 @@ function eval_model(img::Union{Array{Float32,2}, Array{Float32,3}}, model; devic
     
     @pywith py_torch.no_grad() begin
         img_y_pred = model(img_x)
-        img_y_pred = py_torch.nn.functional.sigmoid(img_y_pred)
+        img_y_pred = py_torch.sigmoid(img_y_pred)
         img_y_pred = img_y_pred.cpu().numpy()
         
         if size(img_y_pred)[1] == 1
